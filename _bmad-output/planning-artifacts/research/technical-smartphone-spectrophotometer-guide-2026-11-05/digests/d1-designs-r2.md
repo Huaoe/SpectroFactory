@@ -1,0 +1,7 @@
+# Digest — D1 base design deep read — round 2 (Europe PMC PMC9123456 full text, accessed 2026-11-05)
+- Printed on a MakerBot Replicator 5th Gen, PLA only; all parts 20% infill (raise for rigidity). Entry-level prints have burrs/raft roughness — trim with razor; fits vary by printer → test-print small pieces first; sliding parts sometimes bind → reprint in another orientation or sand. conf high.
+- Slit = Slit Mount DBS22 + 2× Slit Wedge DBS23 + 2× miniature utility knife blades. Grating (GP01) slides into DBS03 slot with grooves horizontal. Camera swap = replace phone mount with DBS17 USB mount or modified DBS25 blank plate. conf high.
+- Analysis done in ImageJ "plot profile" on a region of the image → intensity vs pixel; two-point wavelength calibration from 2 LEDs, 2 laser pointers or 2 fluorescent lines; field reference spectra table of sources (Fig. 7). conf high.
+- Beer's law validation: CuSO4·5H2O 1.2 M stock, 11 serial 2× dilutions, absorbance A = −log10(P/P0) at 800 nm (DBS + iPhone X, 200-px tall region) vs PerkinElmer Lambda XLS; after restricting to linear ranges both give "remarkably similar results"; PE linear to ~0.2 M, DBS no upper limit seen. conf high.
+- Commercial teaching-grade visible spectrophotometers cited at $400–$6000. conf medium (authors' figure).
+- OSF registration 7ewb3 lists STEP files DBS06–DBS25 + "DBS Bill of Materials.xlsx" (pages 1–2 of API; page 3+ not enumerated). conf high.
