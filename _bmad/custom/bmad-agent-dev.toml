@@ -1,0 +1,8 @@
+# Team overrides for bmad-agent-dev (Amelia).
+# Committed to the repo — applies to every developer on the project.
+
+[agent]
+
+persistent_facts = [
+  "Team convention: new features are developed in dedicated git worktrees under `.worktrees/<slug>` at the repo root, on `feature/<slug>` branches — never directly in the main checkout. `.worktrees/` is gitignored.",
+]

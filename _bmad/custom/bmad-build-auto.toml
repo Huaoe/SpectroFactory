@@ -1,0 +1,25 @@
+# Team overrides for bmad-build-auto.
+# Committed to the repo — applies to every developer on the project.
+#
+# Convention: new features are implemented in a dedicated git worktree under
+# `.worktrees/<slug>` at the repo root, on a `feature/<slug>` branch —
+# never directly in the main checkout. `.worktrees/` is gitignored.
+
+[workflow]
+
+persistent_facts = [
+  "Team convention: every new feature is implemented in a dedicated git worktree under `.worktrees/<slug>` at the repo root, on a `feature/<slug>` branch — never directly in the main checkout.",
+  "When implementation happened in a worktree, generate `{diff_file}` from that worktree (e.g. `git -C .worktrees/<slug> diff {baseline_commit}` including untracked files, or `git diff {baseline_commit}..feature/<slug>` when the subagent committed) — the main checkout will show no changes.",
+]
+
+implementation_handoff = """
+Launch a subagent with no prior conversation context, with this prompt:
+
+> Work in a dedicated git worktree — never directly in the main checkout.
+> From the repo root, run `git worktree add ".worktrees/<slug>" -b feature/<slug>` where <slug> is a short kebab-case name for this work. If a matching worktree already exists (`git worktree list`), reuse it.
+> Do ALL implementation work inside that worktree directory, and leave the worktree in place when done.
+>
+> Read {spec_file} fully and implement it — the spec is the sole source of truth. Load every file listed in its frontmatter `context:` before you start.
+>
+> When done, report the worktree path and branch name, what you changed, how you verified it, and anything left incomplete or risky.
+"""
